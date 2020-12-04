@@ -3,6 +3,7 @@
     padding: 0;
 }
 
+/* BODY & HEADER STYLES */
 body {
     font-family: 'Lato', sans-serif;
     background-image: linear-gradient(
@@ -31,6 +32,7 @@ h2 {
     padding: .25em
 }
 
+/* INPUT STYLES */
 #input-cont {
     width: 80%;
     margin: 0 auto;
@@ -57,10 +59,42 @@ h2 {
     padding: .2em;
 }
 
-.none {
+.none, .invis {
     display: none;
 }
 
 #submit-button {
     border-radius: .4em;
+}
+
+/* OUTPUT STYLES */
+#output-cont {
+    height: auto;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1.2em;
+    background-color: #eee;
+    opacity: .6;
+    border-radius: .5em;
+    display: flex;
+    flex-direction: column;
+}
+
+#output-header {
+    text-decoration: underline;
+}
+
+.output-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+hr {
+    width: 95%;
+    margin: .1em auto;
+}
+
+.name {
+    width: 40%;
+    text-align: left;
 }
