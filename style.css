@@ -26,7 +26,7 @@ h1 {
 
 h2 {
     color: #616161;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 200;
     padding: .25em
 }
@@ -55,6 +55,10 @@ h2 {
 
 .bar {
     padding: .2em;
+}
+
+.none {
+    display: none;
 }
 
 #submit-button {

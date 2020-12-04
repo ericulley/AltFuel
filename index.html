@@ -12,13 +12,13 @@
     <body>
         <header>
             <h1>Alt Fuel</h1>
-            <h2>finding your nearest electric charging and alternative fuel stations</h2>
+            <h2>FINDING YOUR NEAREST ELECTRIC CHARGING AND ALTERNATIVE FUEL STATIONS</h2>
         </header>
         <main>
             <form id="input-cont">
                 <div class="input-box" id="loc-cont">
                     <label class="input-item" for="locatoin-input">Location:</label>
-                    <input class="input-item bar" id="location-input" type="text" placeholder="Enter Zip Code">
+                    <input class="input-item bar none" id="location-input" type="text" placeholder="Enter Zip Code">
                 </div>
                 <div class="input-box" id="type-cont">
                     <label class="input-item" for="">Fuel Type:</label>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="input-box" id="range-cont">
                     <label class="input-item" for="range">Range (miles):</label>
-                    <input class="input-item" type="range" id="range-slider" min="5" max="200" step="5" value="10">
+                    <input class="input-item" id="range-slider" type="range" min="5" max="200" step="5" value="10">
                     <span class="input-item" id="slider-val">10</span>
                 </div>
                 <input class="input-box" id="submit-button" type="submit" value="Search">
