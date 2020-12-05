@@ -15,11 +15,11 @@ navigator.geolocation.getCurrentPosition((position) => {
     $('form').on('submit', setInputValuesAndSearch)
     },
     (error) => {
-    // If locatoin data access is denied, code below will run & ask for zip code input
+    // If locatoin data access is denied, code below will run & zip code input will appear
         $('.none').toggleClass('none')
         $('form').on('submit', setInputValuesAndSearch)
         // Maybe change this to a modal
-        console.log("User didn't allow current location to be accessed. Enter zip code.")
+        console.log("User didn't allow current location to be accessed. Please enter a zip code.")
     }
 );
 
@@ -52,13 +52,15 @@ const searchByCoordinates = (curLat, curLong, fuelType, radius) => {
                 const outputRow = $(`<div id="${i}">`).addClass('output-row')
                 const stationName = $('<div>').addClass('output-item name').text(data.fuel_stations[i].station_name)
                 const city = $('<div>').addClass('output-item city').text(data.fuel_stations[i].city)
-                const distanceAway = $('<div>').addClass('output-item distance').text(data.fuel_stations[i].distance.toFixed(1))
+                const distanceAway = $('<div>').addClass('output-item distance').text(`${data.fuel_stations[i].distance.toFixed(1)} mi`)
                 const price = $('<div>').addClass('output-item price').text(data.fuel_stations[i].ev_pricing || "unknown")
-                const mapView= $('<div>').addClass('output-item map').text(`MAP`)
+                const streetAdd = (data.fuel_stations[i].street_address).replace(/[\s]/g, '+')
+                const directionsURL = `https://www.google.com/maps/dir/?api=1&destination=${streetAdd}`
+                const mapView= $(`<a href="${directionsURL}" target="_blank">`).addClass('output-item map').text('MAP')
                 outputRow.append(stationName).append(city).append(distanceAway).append(price).append(mapView)
                 $('#results-cont').append(outputRow).append($('<hr>'))
             }
-            // console.log(data)
+            console.log(data)
         },
         (error) => {
             console.log(error)
@@ -77,9 +79,11 @@ const searchByZip = (curZip, fuelType, radius) => {
                 const outputRow = $(`<div id="${i}">`).addClass('output-row')
                 const stationName = $('<div>').addClass('output-item name').text(data.fuel_stations[i].station_name)
                 const city = $('<div>').addClass('output-item city').text(data.fuel_stations[i].city)
-                const distanceAway = $('<div>').addClass('output-item distance').text(data.fuel_stations[i].distance.toFixed(1))
+                const distanceAway = $('<div>').addClass('output-item distance').text(`${data.fuel_stations[i].distance.toFixed(1)} mi`)
                 const price = $('<div>').addClass('output-item price').text(data.fuel_stations[i].ev_pricing || "unknown")
-                const mapView= $('<div>').addClass('output-item map').text(`MAP`)
+                const streetAdd = (data.fuel_stations[i].street_address).replace(/[\s]/g, '+')
+                const directionsURL = `https://www.google.com/maps/dir/?api=1&destination=${streetAdd}`
+                const mapView= $(`<a href="${directionsURL}" target="_blank">`).addClass('output-item map').text('MAP')
                 outputRow.append(stationName).append(city).append(distanceAway).append(price).append(mapView)
                 $('#results-cont').append(outputRow).append($('<hr>'))
             }

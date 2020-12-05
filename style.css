@@ -70,6 +70,8 @@ h2 {
 /* OUTPUT STYLES */
 #output-cont {
     height: auto;
+    max-height: 15em;
+    overflow: scroll;
     width: 80%;
     margin: 0 auto;
     padding: 1.2em;
@@ -87,6 +89,7 @@ h2 {
 .output-row {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 1em;
 }
 
 hr {
@@ -95,6 +98,22 @@ hr {
 }
 
 .name {
-    width: 40%;
+    width: 35%;
     text-align: left;
+}
+
+.city {
+    width: 20%;
+}
+
+.distance {
+    width: 15%;
+}
+
+.price {
+    width: 10%;
+}
+
+.map {
+    width: 15%;
 }
