@@ -31,7 +31,7 @@ nav {
     background-color: #616161;
 }
 
-a {
+.nav-link>a {
     color: ghostwhite;
     text-decoration: none;
 }
@@ -60,22 +60,26 @@ a {
 }
 
 /* Headers  */
-h1 {
+header {
     text-align: center;
     color: #616161;
+    padding: .25em;
+}
+
+h1 {
     font-size: 5em;
     font-weight: 700;
     font-style: italic;
     font-family: 'Raleway', sans-serif;
-    padding: .25em;
 }
 
 h2 {
-    text-align: center;
-    color: #616161;
     font-size: 1.2em;
     font-weight: 200;
-    padding: .25em
+}
+
+main {
+    text-align: center;
 }
 
 /* INPUT STYLES */
@@ -117,15 +121,12 @@ h2 {
 #output-cont {
     height: auto;
     max-height: 35em;
-    overflow: scroll;
     width: 80%;
     margin: 0 auto;
     padding: 1.2em;
     background-color: #eee;
     opacity: .6;
     border-radius: .5em;
-    display: flex;
-    flex-direction: column;
 }
 
 #output-header {
@@ -135,7 +136,7 @@ h2 {
 .output-row {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 1em;
+    padding: .5em;
 }
 
 hr {
