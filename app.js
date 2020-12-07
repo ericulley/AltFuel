@@ -6,9 +6,6 @@ let curLong = null
 const zipCodeTest = /^\d{5}$/
 let curZip = null
 
-func requestWhenInUseAuthorization()
-
-
 // Start by getting user location coordinates or display zip code input
 navigator.geolocation.getCurrentPosition((position) => {
     // If access is granted to current location, code below will run
