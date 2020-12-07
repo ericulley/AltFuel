@@ -1,3 +1,4 @@
+// On Load Function
 $(() => {
 // Declare Global Variables
 let curLat= null
@@ -102,14 +103,16 @@ const searchByZip = (curZip, fuelType, radius) => {
 
 
 
-
-
-
+// Nav Menu
+$('#nav-tab').click(() => {
+    $('nav').toggleClass('hide')
+    $('#nav-tab').toggleClass('move')
+})
 
 // Milage Range Slider Styling
 $('#range-slider').on('input', () => {
     $('#slider-val').text($('#range-slider').val())
 })
 
-
+// Close On-Load Function
 })
