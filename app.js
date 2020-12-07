@@ -12,12 +12,14 @@ navigator.geolocation.getCurrentPosition((position) => {
     curLat = position.coords.latitude
     curLong = position.coords.longitude
     let pinpointed = $('<div>').addClass('input-item bar').text('Identified')
+    $('#searching').addClass('none')
     $('#loc-cont').append(pinpointed)
     $('form').on('submit', setInputValuesAndSearch)
     },
     (error) => {
     // If locatoin data access is denied, code below will run & zip code input will appear
         $('.none').toggleClass('none')
+        $('#searching').addClass('none')
         $('form').on('submit', setInputValuesAndSearch)
         // Maybe change this to a modal
         console.log("User didn't allow current location to be accessed. Please enter a zip code.")
@@ -48,7 +50,7 @@ const searchByCoordinates = (curLat, curLong, fuelType, radius) => {
     }).then(
         (data) => {
             // When the search succeeds, display results in the DOM
-            $('#output-cont').toggleClass('invis')
+            $('#output-cont').removeClass('invis')
             for (let i = 0; i < data.fuel_stations.length; i++) {
                 const outputRow = $(`<div id="${i}">`).addClass('output-row')
                 const stationName = $('<div>').addClass('output-item name').text(data.fuel_stations[i].station_name)
@@ -75,7 +77,7 @@ const searchByZip = (curZip, fuelType, radius) => {
         url: `https://developer.nrel.gov/api/alt-fuel-stations/v1/nearest.json?api_key=nobIa8uA9o0Vu32ocLEdOCpQcv0DB5nYBrvYNB0F&location=${curZip}&fuel_type=${fuelType}&limit=10&access_code=public&radius=${radius}`,
     }).then(
         (data) => {
-            $('#output-cont').toggleClass('invis')
+            $('#output-cont').removeClass('invis')
             for (let i = 0; i < data.fuel_stations.length; i++) {
                 const outputRow = $(`<div id="${i}">`).addClass('output-row')
                 const stationName = $('<div>').addClass('output-item name').text(data.fuel_stations[i].station_name)
@@ -105,7 +107,7 @@ const searchByZip = (curZip, fuelType, radius) => {
 
 // Nav Menu
 $('#nav-tab').click(() => {
-    $('nav').toggleClass('hide')
+    $('nav').toggleClass('move')
     $('#nav-tab').toggleClass('move')
 })
 
