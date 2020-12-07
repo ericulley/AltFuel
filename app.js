@@ -6,6 +6,9 @@ let curLong = null
 const zipCodeTest = /^\d{5}$/
 let curZip = null
 
+func requestWhenInUseAuthorization()
+
+
 // Start by getting user location coordinates or display zip code input
 navigator.geolocation.getCurrentPosition((position) => {
     // If access is granted to current location, code below will run
@@ -93,7 +96,7 @@ const searchByZip = (curZip, fuelType, radius) => {
             // console.log(data)
         },
         (error) => {
-            console.log(`Or this far....There was an AJAX error: ${error}.`)
+            console.log(`There was an AJAX error: ${error}.`)
         }
     )
 }
@@ -106,7 +109,7 @@ const searchByZip = (curZip, fuelType, radius) => {
 
 
 // Nav Menu
-$('#nav-tab').click(() => {
+$('.home-link').click(() => {
     $('nav').toggleClass('move')
     $('#nav-tab').toggleClass('move')
 })
