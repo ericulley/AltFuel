@@ -63,10 +63,9 @@ const searchByCoordinates = (curLat, curLong, fuelType, radius) => {
                 outputRow.append(stationName).append(city).append(distanceAway).append(price).append(mapView)
                 $('#results-cont').append(outputRow).append($('<hr>'))
             }
-            console.log(data)
         },
         (error) => {
-            console.log(error)
+            console.log(`There was an AJAX error: ${error}.`)
         }
     )
 }
