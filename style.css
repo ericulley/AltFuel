@@ -299,7 +299,7 @@ img {
     }
 }
 
-@media (max-width: 730px) {
+@media (max-width: 800px) {
     #input-cont {
         align-items: start;
         display: grid;
@@ -312,7 +312,7 @@ img {
     .input-box {
         font-size: 1em;
         margin: 0 .2em;
-        padding: 1em;
+        padding: 1.7em;
     }
 
     #loc-cont {
@@ -339,6 +339,9 @@ img {
     h2 {
         font-size: 1em;
         padding: 0 2em;
+    }
+    .output-row {
+        padding: .8em .5em;
     }
 }
 
