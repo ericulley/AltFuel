@@ -11,7 +11,7 @@ navigator.geolocation.getCurrentPosition((position) => {
     // If access is granted to current location, code below will run
     curLat = position.coords.latitude
     curLong = position.coords.longitude
-    let pinpointed = $('<div>').addClass('input-item bar').text('Identified')
+    let pinpointed = $('<div id="identified">').addClass('input-item bar').text('Identified')
     $('#searching').addClass('none')
     $('#loc-cont').append(pinpointed)
     $('form').on('submit', setInputValuesAndSearch)
