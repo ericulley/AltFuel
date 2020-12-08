@@ -222,6 +222,10 @@ h2 {
     padding: .5em;
 }
 
+.output-item {
+    overflow: hidden;
+}
+
 hr {
     width: 95%;
     margin: .1em auto;
@@ -241,11 +245,15 @@ hr {
 }
 
 .price {
-    width: 10%;
+    width: 15%;
 }
 
 .map {
     width: 15%;
+}
+
+.alt {
+    display: none;
 }
 
 /* Footer Styles */
@@ -293,9 +301,13 @@ img {
 @media (max-width: 900px) {
     footer {
         position: relative;
-        text-align: center;
         justify-content: center;
+        text-align: center;
         margin-top: .5em;
+    }
+    #footer-item {
+        width: 100%;
+        padding: 0;
     }
 }
 
@@ -308,34 +320,27 @@ img {
             "row1A row1B row1C"
             ".submit."
     }
-
     .input-box {
         font-size: 1em;
         margin: 0 .2em;
         padding: 1.7em;
     }
-
     #loc-cont {
         grid-area: row1A;
     }
-
     #type-cont {
         grid-area: row1B;
     }
-
     #range-cont {
         grid-area: row1C;
     }
-
     #submit-button {
         align-items: center;
         grid-area: submit;
     }
-
     h1 {
         font-size: 3.5em;
     }
-
     h2 {
         font-size: 1em;
         padding: 0 2em;
@@ -356,4 +361,11 @@ img {
         padding: 1.2em .5em;
         overflow: hidden;
     }
+    .orig {
+        display: none;
+    }
+    .alt {
+        display: inline;
+    }
+
 }
