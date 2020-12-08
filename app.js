@@ -98,13 +98,6 @@ const searchByZip = (curZip, fuelType, radius) => {
     )
 }
 
-
-
-
-
-
-
-
 // Nav Menu
 $('.home-link').click(() => {
     $('nav').toggleClass('move')
